@@ -1,0 +1,50 @@
+# =============== Unity 核心系统生成的临时和缓存文件夹 ===============
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Mm]emoryCaptures/
+[Uu]ser[Ss]ettings/
+
+# =============== 各种代码编辑器的配置文件和缓存 ===============
+# Visual Studio / VS Code / Rider 缓存目录
+.vs/
+.vscode/
+.idea/
+.gradle/
+ExportedObj/
+.consulo/
+
+# 自动生成的项目文件和临时文件（这些不需要上传，打开工程时会自动生成）
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# =============== 针对特定插件或崩溃报告 ===============
+# 崩溃报告
+sysinfo.txt
+
+# 打包出来的游戏本体（通常不放在源码仓库里）
+*.apk
+*.aab
+*.unitypackage
+*.app
+*.exe
+
+# 忽略系统自带的隐藏缓存文件 (Windows & Mac)
+.DS_Store
+Thumbs.db
+Desktop.ini
