@@ -13,7 +13,7 @@ public class player : MonoBehaviour
     private float xInput;
 
     [Header("Collision details")]
-    [SerializeField] private float groundCheckDistance ;
+    [SerializeField] private float groundCheckDistance = 1.3f;
     [SerializeField] private bool isGrounded;
     [SerializeField] private LayerMask whatIsGround;
     private void Awake()
@@ -28,9 +28,10 @@ public class player : MonoBehaviour
         HandleInput();
         HandleMovement();
         HandleAnimations();
-     }
-   
-    void Jump() {
+    }
+
+    void Jump()
+    {
         if (isGrounded)
         {
             bool isJumping = rb.linearVelocity.y != 0;
@@ -39,7 +40,8 @@ public class player : MonoBehaviour
         }
     }
     /*[ContextMenu("Filp")]/*/
-    void Filp() {
+    void Filp()
+    {
 
         isFacingRight = !isFacingRight;
 
@@ -52,6 +54,9 @@ public class player : MonoBehaviour
     void HandleAnimations()
     {
         bool isMoving = rb.linearVelocity.x != 0;
+        anim.SetFloat("yVelocity", rb.linearVelocity.y);
+        anim.SetFloat("xVelocity", rb.linearVelocity.x);
+        anim.SetBool("isGrounded", isGrounded);
         anim.SetBool("isMoving", isMoving);
     }
     private void HandleInput()
@@ -76,9 +81,10 @@ public class player : MonoBehaviour
     }
     private void HandleCollsion()
     {
-        isGrounded = Physics2D.Raycast(transform.position, Vector2.down, groundCheckDistance,whatIsGround);
+        //Debug.Log(transform.position);
+        isGrounded = Physics2D.Raycast(transform.position, Vector2.down, groundCheckDistance, whatIsGround);
     }
-    private void OnDrawGizmos() {
-        Gizmos.DrawLine(transform.position,transform.position + new Vector3 (0,-groundCheckDistance));
-    }
+    //private void OnDrawGizmos() {
+    //    Gizmos.DrawLine(transform.position,transform.position + new Vector3 (0,-groundCheckDistance));
+    //}
 }

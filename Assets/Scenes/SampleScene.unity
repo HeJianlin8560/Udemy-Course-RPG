@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 334894928}
   - component: {fileID: 334894927}
   - component: {fileID: 334894930}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -654,7 +654,11 @@ MonoBehaviour:
   moveSeepd: 3.5
   jumpFore: 8
   isFacingRight: 1
-  groundCheckDistance: 0.71
+  groundCheckDistance: 1.3
+  isGrounded: 1
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!50 &1102177621
 Rigidbody2D:
   serializedVersion: 5
